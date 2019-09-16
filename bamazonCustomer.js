@@ -1,6 +1,5 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-// var moment = require("moment");
 
 var conn = mysql.createConnection({
     host: "localhost",
@@ -43,11 +42,18 @@ function prodId() {
     ]).then(function(ans) {
         conn.query("select * from products where ?", {item_id: ans.item_id}, function(err, res) {
             if(err) throw err;
-            if(res[0].stock_quantity === 0) {
+            if(res[0] === undefined) {
+                console.log("We do not carry an item with that ID.");
+                setTimeout(function() { whatNow(); }, 1500);
+            } else if(res[0].stock_quantity === 0) {
                 console.log("Sorry, we're plumb out of " + res[0].product_name + "!");
+                setTimeout(function() { whatNow(); }, 1500);
+            } else if(res[0].stock_quantity < ans.units) {
+                console.log("We have " + res[0].stock_quantity + " in stock. Please select a lower quantity.");
+                setTimeout(function() { whatNow(); }, 1500);
             } else {
                 var deduct = res[0].stock_quantity -= ans.units;
-                var total;
+                var total = res[0].price;
                 conn.query("update products set ? where ?",
                 [
                     {
@@ -58,9 +64,11 @@ function prodId() {
                     }
                 ], function(err, res2) {
                     if(err) throw err;
-                    total = (res[0].price);
-                    console.log("You have purchased " + ans.units + " units of the item " + res[0].product_name + ".\nYour total is $" + total + ".");
-                    setTimeout(function() { whatNow(); }, 1000);
+                    if(total > 1) {
+                        total *= ans.units;
+                    }
+                    console.log("You have purchased " + ans.units + " unit(s) of the item " + res[0].product_name + ".\nYour total is $" + total + ".");
+                    setTimeout(function() { whatNow(); }, 1500);
                 });
             }
         });
@@ -73,12 +81,10 @@ function whatNow() {
             name: "next",
             type: "list",
             message: "What would you like to do now?",
-            choices: ["VIEW CART", "PURCHASE ANOTHER ITEM", "EXIT"]
+            choices: ["PURCHASE ANOTHER ITEM", "EXIT"]
         }
     ]).then(function(ans) {
-        if(ans.next === "VIEW CART") {
-            console.log("Okay");
-        } else if(ans.next === "PURCHASE ANOTHER ITEM") {
+        if(ans.next === "PURCHASE ANOTHER ITEM") {
             displayProducts();
         } else {
             conn.end();
