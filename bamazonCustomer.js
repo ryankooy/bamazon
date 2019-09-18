@@ -62,7 +62,7 @@ function prodId() {
                     {
                         item_id: ans.item_id
                     }
-                ], function(err, res2) {
+                ], function(err) {
                     if(err) throw err;
                     if(total > 1) {
                         total *= ans.units;

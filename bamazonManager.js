@@ -20,17 +20,26 @@ function menu() {
         {
             name: "options",
             type: "list",
-            choices: ["VIEW PRODUCTS FOR SALE", "VIEW LOW INVENTORY", "ADD TO INVENTORY", "ADD NEW PRODUCT"]
+            message: "What would you like to do next?",
+            choices: ["VIEW PRODUCTS FOR SALE", "VIEW LOW INVENTORY", "ADD TO INVENTORY", "ADD NEW PRODUCT", "EXIT"]
         }
     ]).then(function(ans) {
-        if(ans.options === "VIEW PRODUCTS FOR SALE") {
-            forSale();
-        } else if(ans.options === "VIEW LOW INVENTORY") {
-            lowInv();
-        } else if(ans.options === "ADD TO INVENTORY") {
-            addInv();
-        } else {
-            newProd();
+        switch(ans.options) {
+            case "VIEW PRODUCTS FOR SALE":
+                forSale();
+                break;
+            case "VIEW LOW INVENTORY":
+                lowInv();
+                break;
+            case "ADD TO INVENTORY":
+                addInv();
+                break;
+            case "ADD NEW PRODUCT":
+                newProd();
+                break;
+            case "EXIT":
+                conn.end();
+                break; 
         }
     });
 }
@@ -62,9 +71,56 @@ function lowInv() {
 }
 
 function addInv() {
+    var sql = "select * from products";
+    conn.query(sql, function(err, res) {
+        if(err) throw err;
+        console.log("-----------------------------------------------\nITEM ID | PRODUCT | DEPARTMENT | PRICE | QUANTITY");
+        for (var i = 0; i < res.length; i++) {
+            console.log(res[i].item_id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + res[i].price + " | " + res[i].stock_quantity);
+        }
+        console.log("-----------------------------------------------");
+        addInvPrompt();
+    });
+}
 
+
+function addInvPrompt() {
+    inquirer.prompt([
+    {
+        name: "item_id",
+        type: "input",
+        message: "Please enter the Item ID of the product:"
+    },
+    {
+        name: "units",
+        type: "input",
+        message: "How many units of this item would you like to add to inventory?"
+    }
+    ]).then(function(ans) {
+        conn.query("select * from products where ?", {item_id: ans.item_id}, function(err, res) {
+            if(err) throw err;
+            if(res[0] === undefined) {
+                console.log("We do not carry an item with that ID.");
+                setTimeout(function() { menu(); }, 1500);
+            } else {
+                var add = res[0].stock_quantity += ans.units;
+                conn.query("update products set ? where ?", [
+                    {
+                        stock_quantity: add
+                    },
+                    {
+                        item_id: ans.item_id
+                    }
+                ], function(err) {
+                    if(err) throw err;
+                    console.log("You have added " + ans.units + " unit(s) of the item " + res[0].product_name + ".\nIts total quantity is now " + res[0].stock_quantity + ".");
+                    setTimeout(function() { menu(); }, 1500);
+                });
+            }
+        });
+    });
 }
 
 function newProd() {
-
+    
 }
