@@ -67,6 +67,17 @@ function prodId() {
                     if(total > 1) {
                         total *= ans.units;
                     }
+                    conn.query("update products set ? where ?",
+                    [
+                        {
+                            product_sales: total
+                        },
+                        {
+                            item_id: ans.item_id
+                        }
+                    ], function(err) {
+                        if(err) throw err;
+                    });
                     console.log("You have purchased " + ans.units + " unit(s) of the item " + res[0].product_name + ".\nYour total is $" + total + ".");
                     setTimeout(function() { whatNow(); }, 1500);
                 });

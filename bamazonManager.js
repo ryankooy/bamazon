@@ -1,4 +1,3 @@
-// var customer = require("./bamazonCustomer.js");
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 
@@ -122,5 +121,53 @@ function addInvPrompt() {
 }
 
 function newProd() {
-    
+    inquirer.prompt([
+        {
+            name: "id",
+            type: "input",
+            message: "Create a five digit Item ID:"
+        },
+        {
+            name: "name",
+            type: "input",
+            message: "What is the name of the product?"
+        },
+        {
+            name: "dep",
+            type: "input",
+            message: "To which department would you like to add this item?"
+        },
+        {
+            name: "price",
+            type: "input",
+            message: "Create a price for this item:"
+        },
+        {
+            name: "quantity",
+            type: "input",
+            message: "Please enter the quantity you would like to add:"
+        }
+    ]).then(function(ans) {
+        var sql = "insert into products (item_id, product_name, department_name, price, stock_quantity) values ?";
+        conn.query(sql, [
+            {
+                item_id: ans.id
+            },
+            {
+                product_name: ans.name
+            },
+            {
+                department_name: ans.dep
+            },
+            {
+                price: ans.price
+            },
+            {
+                stock_quantity: ans.quantity
+            }
+        ], function(err) {
+            if(err) throw err;
+            forSale();
+        });
+    });
 }
