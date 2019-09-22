@@ -58,7 +58,14 @@ SELECT top_albums.year, top_albums.album, top_albums.position, top5000.song, top
 FROM top_albums INNER JOIN top5000 ON (top_albums.artist = top5000.artist AND top_albums.year = top5000.year)
 WHERE (top_albums.artist = ? AND top5000.artist = ?) ORDER BY top_albums.year, top_albums.position;
 
-select departments.department_id, departments.department_name, departments.over_head_costs, products.product_sales
-from departments inner join products on (departments.department_name = products.department_name and departments.product_sales = products.product_sales)
-where (departments.department_name = ? and products.department_name = ?)
-order by departments.department_id, departments.department_name, departments.over_head_costs, departments.product_sales;
+select departments.product_sales, products.product_sales
+from departments
+inner join products
+on departments.product_sales = products.product_sales;
+
+select products.product_sales-departments.over_head_costs
+as total_profit
+from products, departments;
+
+select departments.department_id, departments.department_name, departments.over_head_costs, products.product_sales, products.product_sales-departments.over_head_costs as total_profit
+from products, departments;

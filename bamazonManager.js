@@ -103,7 +103,8 @@ function addInvPrompt() {
                 setTimeout(function() { menu(); }, 1500);
             } else {
                 var add = res[0].stock_quantity += ans.units;
-                conn.query("update products set ? where ?", [
+                conn.query("update products set ? where ?",
+                [
                     {
                         stock_quantity: add
                     },
@@ -149,7 +150,8 @@ function newProd() {
         }
     ]).then(function(ans) {
         var sql = "insert into products (item_id, product_name, department_name, price, stock_quantity) values ?";
-        conn.query(sql, [
+        conn.query(sql,
+        [
             {
                 item_id: ans.id
             },
