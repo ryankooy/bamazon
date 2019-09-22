@@ -44,12 +44,13 @@ function prodSales() {
         if(err) throw err;
         var table = new Table({
             head: ["Department ID", "Department Name", "Overhead Costs", "Product Sales", "Total Profit"],
-            colWidths: [20, 20, 20, 15, 15]
+            colWidths: [17, 20, 17, 15, 15]
         });
-        table.push(
-            ['First value', 'Second value', 'asdfdas', 'asdlfsd', 'asdfsd'],
-            ['First value', 'Second value', 'asdfdas', 'asdlfsd', 'asdfsd']
-        );
+        for (var i = 0; i < 5; i++) {
+            table.push(
+                [res[i].department_id, res[i].department_name, res[i].over_head_costs, res[i].product_sales, res[i].total_profit]
+            );
+        }
         console.log(table.toString());
         menu();
     });
