@@ -24,13 +24,13 @@ A user can choose `ADD TO INVENTORY` to increase the count of a specified item:
 
 ![bamazonManager demo - adding to inventory](https://media.giphy.com/media/LSjPV6RxN9wle7GAaB/giphy.gif)
 
-Finally, a Manager-role user is able to use `ADD NEW PRODUCT`to create a new item for the inventory:
+Finally, a Manager-role user is able to use `ADD NEW PRODUCT`to create a new item to add to the inventory:
 
 ![bamazonManager demo - adding new product](https://media.giphy.com/media/hXI8nfLoIHzpQAoaDr/giphy.gif)
 
 ### Supervisor
 
-Entering `node bamazonSupervisor.js` into the CLI will provide the user with a list of the store's departments, as well as giving the user the ability to create new departments using the list option `CREATE NEW DEPARTMENT`.
+Entering `node bamazonSupervisor.js` into the CLI will provide the user with a list of the store's departments, as well as give the user the ability to create new departments using the list option `CREATE NEW DEPARTMENT`.
 
 <img src="/bamazonMv.png" width="500" />
 
