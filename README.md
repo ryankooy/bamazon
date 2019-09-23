@@ -1,8 +1,6 @@
-# Bamazon CLI App
+# Bamazon App
 
-### This ...
-
-Bamazon CLI App is ...
+Bamazon App is a Node.js app that allows users to manipulate a mock store and inventory within the command line; the associated data is stored in a MySQL database.
 
 ## Instructions For Running Bamazon
 
@@ -31,7 +29,7 @@ Bamazon CLI App is ...
 
 ## Technologies Used
 
-The Liri Node App is dependent on multiple modules, packages, and technologies, incorporating:
+This Bamazon app is dependent on multiple modules, packages, applications, and technologies, incorporating:
 
 * **Node.js**, the CLI
 * **MySQL Workbench**, for viewing and updating database tables
