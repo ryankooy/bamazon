@@ -1,42 +1,38 @@
 # Bamazon App
 
 Bamazon App is a Node.js app that allows users to manipulate a mock store and inventory within the command line; the associated data is stored in a MySQL database.
-<br>
 
 ## Instructions For Running Bamazon
 
 This app has a three-part structure, providing access to the store's products and/or departments in the form of a user's choice to act as either Customer, Manager, or Supervisor.
-<br>
 
 ### Customer
 
 By typing `node bamazonCustomer.js`, a user is shown a table of the current products for sale and asked for the Item ID and desired quantity of an item.
 
 ![bamazonCustomer demo](https://media.giphy.com/media/h86dVWLuRWDb4oNO4l/giphy.gif)
-<br>
 
 ### Manager
 
 Typing `node bamazonManager.js` shows the user a list of several Manager-role options from which to select.
 
-`VIEW PRODUCTS FOR SALE` displays a table of the entire inventory, with `VIEW LOW INVENTORY` presenting the user with items having counts lower than five.
+`VIEW PRODUCTS FOR SALE` displays a table of the entire inventory, with `VIEW LOW INVENTORY` presenting the user with items having counts lower than five:
 
 <img src="/bamazonMv.png" width="500" />
 
-A user can choose `ADD TO INVENTORY` to increase the count of a specified item.
+A user can choose `ADD TO INVENTORY` to increase the count of a specified item:
 
 ![bamazonManager demo - adding to inventory](https://media.giphy.com/media/LSjPV6RxN9wle7GAaB/giphy.gif)
-<br><br>
 
-Finally, a Manager-role user is able to use `ADD NEW PRODUCT`to create a new item for the inventory.
+Finally, a Manager-role user is able to use `ADD NEW PRODUCT`to create a new item for the inventory:
 
 ![bamazonManager demo - adding new product](https://media.giphy.com/media/hXI8nfLoIHzpQAoaDr/giphy.gif)
-<br>
 
 ### Supervisor
 
-`node bamazonSupervisor.js`
-<br>
+Entering `node bamazonSupervisor.js` into the CLI will provide the user with a list of the store's departments, as well as giving the user the ability to create new departments using the list option `CREATE NEW DEPARTMENT`.
+
+<img src="/bamazonMv.png" width="500" />
 
 ## Technologies Used
 
