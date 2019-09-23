@@ -11,6 +11,7 @@ This app has a three-part structure, providing access to the store's products an
 ### Customer
 
 By typing `node bamazonCustomer.js`, a user is shown a table of the current products for sale and asked for the Item ID and desired quantity of an item.
+
 ![bamazonCustomer demo](https://media.giphy.com/media/h86dVWLuRWDb4oNO4l/giphy.gif)
 <br>
 
@@ -18,14 +19,17 @@ By typing `node bamazonCustomer.js`, a user is shown a table of the current prod
 
 Typing `node bamazonManager.js` shows the user a list of several Manager-role options from which to select.
 
-`VIEW PRODUCTS FOR SALE` displays a table of the entire inventory, with `VIEW LOW INVENTORY` presenting the user with items having counts lower than five. <br>
+`VIEW PRODUCTS FOR SALE` displays a table of the entire inventory, with `VIEW LOW INVENTORY` presenting the user with items having counts lower than five.
+
 <img src="/bamazonMv.png" width="500" />
 
-A user can choose `ADD TO INVENTORY` to increase the count of a specified item. <br>
+A user can choose `ADD TO INVENTORY` to increase the count of a specified item.
+
 ![bamazonManager demo - adding to inventory](https://media.giphy.com/media/LSjPV6RxN9wle7GAaB/giphy.gif)
 <br><br>
 
-Finally, a Manager-role user is able to use `ADD NEW PRODUCT`to create a new item for the inventory. <br>
+Finally, a Manager-role user is able to use `ADD NEW PRODUCT`to create a new item for the inventory.
+
 ![bamazonManager demo - adding new product](https://media.giphy.com/media/hXI8nfLoIHzpQAoaDr/giphy.gif)
 <br>
 
