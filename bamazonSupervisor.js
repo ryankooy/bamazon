@@ -57,5 +57,34 @@ function prodSales() {
 }
 
 function newDep() {
-
+    inquirer.prompt([
+        {
+            name: "name",
+            type: "input",
+            message: "Enter the new department name:"
+        },
+        {
+            name: "costs",
+            type: "input",
+            message: "What are the overhead costs of this department?"
+        },
+        {
+            name: "ID",
+            type: "input",
+            message: "Please create a department ID:"
+        }
+    ]).then(function(ans) {
+        var sql = "insert into departments set ?";
+        conn.query(sql,
+        [
+            {
+                department_name: ans.name,
+                over_head_costs: ans.costs,
+                department_id: ans.ID
+            }
+        ], function(err) {
+            if(err) throw err;
+            menu();
+        });
+    });
 }

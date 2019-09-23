@@ -67,11 +67,8 @@ function prodId() {
                     if(total > 1) {
                         total *= ans.units;
                     }
-                    conn.query("update products set ? where ?",
+                    conn.query("update products set product_sales = product_sales+" + total + " where ?",
                     [
-                        {
-                            product_sales: total
-                        },
                         {
                             item_id: ans.item_id
                         }

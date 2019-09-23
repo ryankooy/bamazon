@@ -135,8 +135,9 @@ function newProd() {
         },
         {
             name: "dep",
-            type: "input",
-            message: "To which department would you like to add this item?"
+            type: "list",
+            message: "To which department would you like to add this item?",
+            choices: ["Grocery", "Children/Toys", "Entertainment", "Electronics", "Medicines"]
         },
         {
             name: "price",
@@ -149,22 +150,14 @@ function newProd() {
             message: "Please enter the quantity you would like to add:"
         }
     ]).then(function(ans) {
-        var sql = "insert into products (item_id, product_name, department_name, price, stock_quantity) values ?";
+        var sql = "insert into products set ?";
         conn.query(sql,
         [
             {
-                item_id: ans.id
-            },
-            {
-                product_name: ans.name
-            },
-            {
-                department_name: ans.dep
-            },
-            {
-                price: ans.price
-            },
-            {
+                item_id: ans.id,
+                product_name: ans.name,
+                department_name: ans.dep,
+                price: ans.price,
                 stock_quantity: ans.quantity
             }
         ], function(err) {
