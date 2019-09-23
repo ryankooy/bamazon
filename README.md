@@ -19,10 +19,9 @@ By typing `node bamazonCustomer.js`, a user is shown a table of the current prod
 
 Typing `node bamazonManager.js` shows the user a list of several Manager-role options from which to select.
 
-`VIEW PRODUCTS FOR SALE` displays a table of the entire inventory, with `VIEW LOW INVENTORY` presenting the user with items having counts lower than five.
+< `VIEW PRODUCTS FOR SALE` displays a table of the entire inventory, with `VIEW LOW INVENTORY` presenting the user with items having counts lower than five.
 
 <img src="/bamazonMv.png" width="500" />
-<br>
 
 A user can choose `ADD TO INVENTORY` to increase the count of a specified item.
 
