@@ -16,8 +16,6 @@ Bamazon CLI App is ...
 
 `node bamazonManager.js`
 
-When a user inputs `node liri concert-this <artist name>`, Liri requests data from the Bands In Town API, returning information about the next 15 concert dates for the selected artist, and then outputs the data; venue names and locations are included in these results. The user is notified if no shows are found.
-
 <img src="/bamazonMv.png" width="500" />
 
 ![bamazonManager demo - adding to inventory](https://media.giphy.com/media/LSjPV6RxN9wle7GAaB/giphy.gif)
@@ -36,3 +34,8 @@ When a user inputs `node liri concert-this <artist name>`, Liri requests data fr
 The Liri Node App is dependent on multiple modules, packages, and technologies, incorporating:
 
 * **Node.js**, the CLI
+* **MySQL Workbench**, for viewing and updating database tables
+* **mysql**, a Node package for connecting and making queries to my database
+* **SQL**, the languaged used for interacting with my database
+* **Inquirer.js**, a package for the CLI prompts and capturing user input
+* **cli-table**, the package used for the tables displayed in the CLI
