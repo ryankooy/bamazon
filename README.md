@@ -4,6 +4,8 @@ Bamazon App is a Node.js app that allows users to manipulate a mock store and in
 
 ## Instructions For Running Bamazon
 
+This app has a three-part structure, providing access to the store's products and/or departments in the form of a user's choice whether to act as Customer, Manager, or Supervisor.
+
 ### Customer
 
 `node bamazonCustomer.js`
@@ -23,9 +25,6 @@ Bamazon App is a Node.js app that allows users to manipulate a mock store and in
 ### Supervisor
 
 `node bamazonSupervisor.js`
-
-![the 'movie-this' command](https://media.giphy.com/media/gHQCdj8i3nSHC8xWfx/giphy.gif)
-
 
 ## Technologies Used
 
