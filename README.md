@@ -18,7 +18,7 @@ Bamazon CLI App is ...
 
 When a user inputs `node liri concert-this <artist name>`, Liri requests data from the Bands In Town API, returning information about the next 15 concert dates for the selected artist, and then outputs the data; venue names and locations are included in these results. The user is notified if no shows are found.
 
-![bamazonManager demo](https://media.giphy.com/media/H1r3vvjklKY0DvU1q7/giphy.gif)
+![bamazonManager demo](bamazonMv 0.png)
 
 ![bamazonManager demo - adding to inventory](https://media.giphy.com/media/LSjPV6RxN9wle7GAaB/giphy.gif)
 
