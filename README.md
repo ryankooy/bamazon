@@ -4,21 +4,27 @@ Bamazon App is a Node.js app that allows users to manipulate a mock store and in
 
 ## Instructions For Running Bamazon
 
-This app has a three-part structure, providing access to the store's products and/or departments in the form of a user's choice whether to act as Customer, Manager, or Supervisor.
+This app has a three-part structure, providing access to the store's products and/or departments in the form of a user's choice to act as either Customer, Manager, or Supervisor.
 
 ### Customer
 
-`node bamazonCustomer.js`
+By typing `node bamazonCustomer.js`, a user is shown a table of the current products for sale and asked for the Item ID and desired quantity of an item.
 
 ![bamazonCustomer demo](https://media.giphy.com/media/h86dVWLuRWDb4oNO4l/giphy.gif)
 
 ### Manager
 
-`node bamazonManager.js`
+Typing `node bamazonManager.js` shows the user a list of several Manager-role options from which to select.
+
+`VIEW PRODUCT INVENTORY` displays a table of the entire inventory, with `VIEW LOW INVENTORY` presenting the user with items having counts lower than five.
 
 <img src="/bamazonMv.png" width="500" />
 
+A user can choose `ADD TO INVENTORY` to increase the count of a specified item.
+
 ![bamazonManager demo - adding to inventory](https://media.giphy.com/media/LSjPV6RxN9wle7GAaB/giphy.gif)
+
+Finally, a Manager-role user is able to use `ADD NEW PRODUCT`to create a new item for the inventory.
 
 ![bamazonManager demo - adding new product](https://media.giphy.com/media/hXI8nfLoIHzpQAoaDr/giphy.gif)
 
