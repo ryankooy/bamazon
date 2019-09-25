@@ -85,9 +85,21 @@ function newDep() {
                 over_head_costs: ans.costs,
                 department_id: ans.ID
             }
-        ], function(err) {
+        ], function(err, res) {
             if(err) throw err;
-            menu();
+            conn.query(" select * from departments;", function(err, res) {
+                var table = new Table({
+                    head: ["Department ID", "Department Name", "Overhead Costs"],
+                    colWidths: [16, 19, 17]
+                });
+                for (var i = 0; i < res.length; i++) {
+                    table.push(
+                        [res[i].department_id, res[i].department_name, res[i].over_head_costs]
+                    );
+                }
+                console.log(table.toString());
+                menu();
+            });
         });
     });
 }
