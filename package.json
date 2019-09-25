@@ -1,8 +1,15 @@
 {
   "name": "bamazon",
   "version": "1.0.0",
-  "description": "UNCHIL201906FSF3 Homework XII",
+  "description": "Bamazon App is a Node.js app that allows users to manipulate a mock store and inventory within the command line; the associated data is stored in a MySQL database.",
   "main": "bamazonCustomer.js",
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "express": "^4.17.1",
+    "inquirer": "^7.0.0",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,17 +17,11 @@
     "type": "git",
     "url": "git+https://github.com/ryankooy/bamazon.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ryankooy/bamazon/issues"
   },
-  "homepage": "https://github.com/ryankooy/bamazon#readme",
-  "dependencies": {
-    "cli-table": "^0.3.1",
-    "console.table": "^0.10.0",
-    "inquirer": "^7.0.0",
-    "moment": "^2.24.0",
-    "mysql": "^2.17.1"
-  }
+  "homepage": "https://github.com/ryankooy/bamazon#readme"
 }

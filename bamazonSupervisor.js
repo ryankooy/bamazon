@@ -39,16 +39,19 @@ function menu() {
 }
 
 function prodSales() {
-    var sql = "select departments.department_id, departments.department_name, departments.over_head_costs, products.product_sales, products.product_sales-departments.over_head_costs as total_profit from products, departments;";
+    var sql = "select departments.department_id, departments.department_name, departments.over_head_costs, sum(products.product_sales) as sales,";
+    sql += " sum(products.product_sales)-departments.over_head_costs as total_profit";
+    sql += " from products inner join departments on products.department_name = departments.department_name";
+    sql += " group by departments.department_id";
     conn.query(sql, function(err, res) {
         if(err) throw err;
         var table = new Table({
             head: ["Department ID", "Department Name", "Overhead Costs", "Product Sales", "Total Profit"],
-            colWidths: [17, 20, 17, 15, 15]
+            colWidths: [16, 19, 17, 16, 15]
         });
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < res.length; i++) {
             table.push(
-                [res[i].department_id, res[i].department_name, res[i].over_head_costs, res[i].product_sales, res[i].total_profit]
+                [res[i].department_id, res[i].department_name, res[i].over_head_costs, res[i].sales, res[i].total_profit]
             );
         }
         console.log(table.toString());
