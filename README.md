@@ -34,7 +34,7 @@ Entering `node bamazonSupervisor.js` into the CLI will provide the user with a l
 
 ![bamazonSupervisor demo](https://media.giphy.com/media/UvVJA1R3Fumkk2x5Gm/giphy.gif)
 
-<img src="/bamazonMv.png" width="500" />
+<img src="/bamazonSshot 0" width="500" />
 
 ## Technologies Used
 
