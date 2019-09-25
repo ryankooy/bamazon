@@ -34,7 +34,7 @@ Entering `node bamazonSupervisor.js` into the CLI will provide the user with a l
 
 ![bamazonSupervisor demo](https://media.giphy.com/media/UvVJA1R3Fumkk2x5Gm/giphy.gif)
 
-<img src="/bamazonSshot 0" width="500" />
+<img src="/bamazonSshot.png" width="500" />
 
 ## Technologies Used
 
@@ -42,7 +42,7 @@ This Bamazon app is dependent on multiple modules, packages, applications, and t
 
 * **Node.js**, the CLI
 * **MySQL Workbench**, for viewing and updating database tables
-* **mysql**, a Node package for connecting and making queries to the database
 * **SQL**, the language used for interacting with the database
+* **mysql**, a Node package for connecting and making queries to the database
 * **Inquirer.js**, a package for the CLI prompts and capturing user input
 * **cli-table**, the package used for the tables displayed in the CLI
