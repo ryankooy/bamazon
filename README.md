@@ -30,8 +30,11 @@ Finally, a Manager-role user is able to use `ADD NEW PRODUCT`to create a new ite
 
 ### Supervisor
 
-Entering `node bamazonSupervisor.js` into the CLI will provide the user with a list of the store's departments, as well as give the user the ability to create new departments using the list option `CREATE NEW DEPARTMENT`.
+Entering `node bamazonSupervisor.js` into the CLI will provide the user with a list of the store's departments, as well as give the user the ability to create new departments using the list option `CREATE NEW DEPARTMENT`:
 
+![bamazonSupervisor demo](https://media.giphy.com/media/UvVJA1R3Fumkk2x5Gm/giphy.gif)
+
+<img src="/bamazonMv.png" width="500" />
 
 ## Technologies Used
 
