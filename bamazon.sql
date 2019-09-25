@@ -47,4 +47,4 @@ select * from departments;
 
 select departments.department_id, departments.department_name, departments.over_head_costs, sum(products.product_sales) as sales,
 sum(products.product_sales)-departments.over_head_costs as total_profit
-from products inner join departments on products.department_name = departments.department_name;s
+from products inner join departments on products.department_name = departments.department_name;
