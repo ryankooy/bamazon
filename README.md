@@ -30,7 +30,7 @@ Finally, a Manager-role user is able to use `ADD NEW PRODUCT`to create a new ite
 
 ### Supervisor
 
-Entering `node bamazonSupervisor.js` into the CLI will provide the user with a list of the store's departments, as well as give the user the ability to create new departments using the list option `CREATE NEW DEPARTMENT`:
+Entering `node bamazonSupervisor.js` into the CLI will provide the user with a list of the total profits from each of the store's departments, as well as give the user the ability to create new departments using the list option `CREATE NEW DEPARTMENT`:
 
 ![bamazonSupervisor demo](https://media.giphy.com/media/UvVJA1R3Fumkk2x5Gm/giphy.gif)
 
@@ -45,4 +45,4 @@ This Bamazon app is dependent on multiple modules, packages, applications, and t
 * **SQL**, the language used for interacting with the database
 * **mysql**, a Node package for connecting and making queries to the database
 * **Inquirer.js**, a package for the CLI prompts and capturing user input
-* **cli-table**, the package used for the tables displayed in the CLI
+* **cli-table**, the package used for the table formatting
